@@ -58,7 +58,12 @@ export const portfolioData = {
     { name: "Google Cloud GenAI Exchange", role: "Top Learner", date: "2025" },
   ],
   achievements: [
-    { title: "Published Research in IJESAT", date: "Apr 2026", details: "Peer-reviewed paper on RAG pipelines in financial analysis." },
+    { 
+      title: "Published Research in IJESAT", 
+      date: "Apr 2026", 
+      details: "Peer-reviewed paper on FinSmartAI: Intelligent Financial Guidance Simplified.",
+      link: "https://ijesat.com/archivesa_view.php?pid=2653"
+    },
     { title: "GSSoC 2026", date: "2026", details: "Open Source AI/ML Contributor." },
   ]
 };

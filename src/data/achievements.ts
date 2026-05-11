@@ -1,10 +1,12 @@
 export const achievementsData = {
   publications: [
     {
-      title: "RAG Pipelines in Financial Document Analysis",
+      title: "FinSmartAI: Intelligent Financial Guidance Simplified",
       journal: "IJESAT (Vol. 26, Issue 4)",
       date: "Apr 2026",
-      description: "Published peer-reviewed research demonstrating the efficacy of Retrieval-Augmented Generation (RAG) combined with AstraDB vector search, achieving BERTScore F1 0.8605."
+      description: "Published peer-reviewed research demonstrating the efficacy of Retrieval-Augmented Generation (RAG) combined with AstraDB vector search, achieving BERTScore F1 0.8605.",
+      url: "https://ijesat.com/archivesa_view.php?pid=2653",
+      pdfUrl: "https://ijesat.com/ijesat/files/8_1775994681.pdf"
     }
   ],
   competitions: [

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { achievementsData } from "@/data/achievements";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Trophy, Award } from "lucide-react";
+import { ArrowLeft, BookOpen, Trophy, Award, ArrowUpRight, FileText } from "lucide-react";
 
 export default function AchievementsPage() {
   return (
@@ -44,12 +44,49 @@ export default function AchievementsPage() {
             <div className="space-y-8">
               {achievementsData.publications.map((pub, idx) => (
                 <div key={idx} className="bg-[#0A0A0A] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-colors duration-500">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
-                    <h3 className="text-2xl font-medium text-white">{pub.title}</h3>
-                    <span className="text-sm font-medium tracking-wider text-zinc-500 uppercase shrink-0">{pub.date}</span>
-                  </div>
+                  {pub.url ? (
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                      <a href={pub.url} target="_blank" rel="noopener noreferrer" className="group/pub inline-flex items-center gap-2">
+                        <h3 className="text-2xl font-medium text-white group-hover/pub:text-zinc-300 transition-colors">
+                          {pub.title}
+                        </h3>
+                        <ArrowUpRight className="w-5 h-5 text-zinc-500 group-hover/pub:text-white group-hover/pub:translate-x-0.5 group-hover/pub:-translate-y-0.5 transition-all shrink-0" />
+                      </a>
+                      <span className="text-sm font-medium tracking-wider text-zinc-500 uppercase shrink-0">{pub.date}</span>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                      <h3 className="text-2xl font-medium text-white">{pub.title}</h3>
+                      <span className="text-sm font-medium tracking-wider text-zinc-500 uppercase shrink-0">{pub.date}</span>
+                    </div>
+                  )}
                   <p className="text-zinc-300 font-light mb-4">{pub.journal}</p>
                   <p className="text-zinc-400 font-light leading-relaxed">{pub.description}</p>
+                  
+                  {pub.url && (
+                    <div className="mt-6 pt-6 border-t border-white/5 flex flex-wrap gap-6">
+                      <a
+                        href={pub.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs text-white hover:text-zinc-300 font-mono tracking-wider transition-colors"
+                      >
+                        <span>Official Page</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </a>
+                      {pub.pdfUrl && (
+                        <a
+                          href={pub.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-300 font-mono tracking-wider transition-colors"
+                        >
+                          <span>PDF Document</span>
+                          <FileText className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

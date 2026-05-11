@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
+import { ArrowUpRight } from "lucide-react";
 
 export default function EventsAndAchievements() {
   return (
@@ -48,7 +49,18 @@ export default function EventsAndAchievements() {
               {portfolioData.achievements.map((ach, idx) => (
                 <div key={idx} className="group relative pl-6 border-l border-zinc-800 hover:border-zinc-500 transition-colors">
                   <div className="absolute w-2 h-2 bg-zinc-800 rounded-full -left-[4.5px] top-2 group-hover:bg-zinc-400 transition-colors"></div>
-                  <h3 className="text-lg font-medium text-white">{ach.title}</h3>
+                  
+                  {ach.link ? (
+                    <a href={ach.link} target="_blank" rel="noopener noreferrer" className="group/ach-link inline-flex items-center gap-1.5">
+                      <h3 className="text-lg font-medium text-white group-hover/ach-link:text-zinc-300 transition-colors">
+                        {ach.title}
+                      </h3>
+                      <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover/ach-link:text-white group-hover/ach-link:translate-x-0.5 group-hover/ach-link:-translate-y-0.5 transition-all shrink-0" />
+                    </a>
+                  ) : (
+                    <h3 className="text-lg font-medium text-white">{ach.title}</h3>
+                  )}
+
                   <span className="block text-sm font-medium tracking-wider text-zinc-500 uppercase mt-1 mb-2">
                     {ach.date}
                   </span>
