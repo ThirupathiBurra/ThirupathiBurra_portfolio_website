@@ -1,5 +1,7 @@
 # Thirupathi Burra | Personal Portfolio & Brand Studio
 
+> 🚀 **Live Production URL:** [thirupathiportfoliowebsite.vercel.app](https://thirupathiportfoliowebsite.vercel.app/)
+
 An editorial, typographic, and highly immersive personal brand website built to highlight production-grade engineering in AI, Machine Learning, and Full-Stack Scalable Systems. 
 
 Built with **Next.js 16 (App Router)**, **Tailwind CSS v4**, and **React Three Fiber**.
